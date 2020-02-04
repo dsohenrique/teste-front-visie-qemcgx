@@ -55,18 +55,15 @@ class App extends Component {
                   />
                 ))}
               </select>
-              {this.state.indexSelecionado ? (
-                <button
-                  onClick={e =>
-                    this.deletaPersonagemHandler(this.state.indexSelecionado)
-                  }
-                  className="btn-excluir"
-                >
-                  Excluir Personagem
-                </button>
-              ) : (
-                <div />
-              )}
+
+              <button
+                onClick={e =>
+                  this.deletaPersonagemHandler(this.state.indexSelecionado)
+                }
+                className="btn-excluir"
+              >
+                Excluir Personagem
+              </button>
             </div>
             <main>
               <ul className="grid">
