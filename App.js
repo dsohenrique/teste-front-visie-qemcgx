@@ -20,7 +20,7 @@ class App extends Component {
   };
 
   deletaPersonagemHandler = indexPersonagem => {
-    if (indexPersonagem) {
+    if (indexPersonagem !== '') {
       const personagens = this.state.personagens;
       personagens.splice(indexPersonagem, 1);
       this.setState({ personagens: personagens });
