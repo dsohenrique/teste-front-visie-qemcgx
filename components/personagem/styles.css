@@ -1,0 +1,15 @@
+li.personagem-card{
+  padding: 10px;
+  text-align: center;
+  display: grid;
+  background-color: #1f2024;
+  border-radius: 5px;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  height: 70px;
+  cursor: pointer;
+  transition: background 0.6s;
+}
+li.personagem-card:hover{
+  background-color: #18181c;
+}
