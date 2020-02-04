@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import Personagem from "./components/personagem";
 import OptionPersonagem from "./components/option-personagem";
@@ -12,19 +11,20 @@ class App extends Component {
     this.state = {
       personagens: [],
       indexSelecionado: "",
-      loading: false,
+      loading: false
     };
   }
 
   changeHandler = e => {
-    console.log(e.target.value);
     this.setState({ indexSelecionado: e.target.value });
   };
 
   deletaPersonagemHandler = indexPersonagem => {
-    const personagens = this.state.personagens;
-    personagens.splice(indexPersonagem, 1);
-    this.setState({ personagens: personagens });
+    if (indexPersonagem) {
+      const personagens = this.state.personagens;
+      personagens.splice(indexPersonagem, 1);
+      this.setState({ personagens: personagens });
+    }
   };
 
   async componentDidMount() {
@@ -55,16 +55,14 @@ class App extends Component {
                   />
                 ))}
               </select>
-              {
-                <button
-                  onClick={e =>
-                    this.deletaPersonagemHandler(this.state.indexSelecionado)
-                  }
-                  className="btn-excluir"
-                >
-                  Excluir Personagem
-                </button>
-              }
+              <button
+                onClick={e =>
+                  this.deletaPersonagemHandler(this.state.indexSelecionado)
+                }
+                className="btn-excluir"
+              >
+                Excluir Personagem
+              </button>
             </div>
             <main>
               <ul className="grid">
